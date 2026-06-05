@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class Login {
 
+  constructor(private router: Router) {}
+
+  login() {
+    // Aquí más adelante validarás contra Spring Boot
+    this.router.navigate(['/dashboard']);
+  }
 }

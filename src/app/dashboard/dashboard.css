@@ -114,3 +114,43 @@
 .stat:last-child {
   border-bottom: none;
 }
+
+/* =========================
+   MOVIL
+========================= */
+@media (max-width: 480px) {
+
+  .dashboard-header {
+    display: none;
+  }
+
+  .mobile-header {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #022b66;
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+  }
+
+  .mobile-logo {
+    width: 50px;
+  }
+
+  .mobile-header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .mobile-header p {
+    font-size: .85rem;
+    margin-top: 3px;
+  }
+}

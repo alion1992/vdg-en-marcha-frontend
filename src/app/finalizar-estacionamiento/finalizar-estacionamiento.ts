@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-finalizar-estacionamiento',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './finalizar-estacionamiento.css',
 })
 export class FinalizarEstacionamiento {
+
+constructor(private router: Router) {}
+
+volver() {
+  this.router.navigate(['/dashboard']);
+}
 
 }

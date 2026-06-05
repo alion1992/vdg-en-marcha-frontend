@@ -13,6 +13,12 @@ export const routes: Routes = [
         .then(m => m.Login)
   },
   {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./dashboard/dashboard')
+        .then(m => m.Dashboard)
+  },
+  {
     path: 'entrada',
     loadComponent: () =>
       import('./iniciar-estacionamiento/iniciar-estacionamiento')

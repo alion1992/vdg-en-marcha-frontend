@@ -1,0 +1,116 @@
+.dashboard {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 20px;
+}
+
+.dashboard-header {
+  background: #022b66;
+  color: white;
+
+  border-radius: 24px;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  opacity: .8;
+}
+
+.logo {
+  width: 60px;
+}
+
+.action-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 22px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+
+  transition: .2s;
+}
+
+.action-card:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.8rem;
+}
+
+.arrival .icon {
+  background: rgba(91,194,54,.15);
+  color: #5bc236;
+}
+
+.departure .icon {
+  background: rgba(2,43,102,.15);
+  color: #022b66;
+}
+
+.action-card h2 {
+  margin-bottom: 5px;
+  color: #111827;
+}
+
+.action-card p {
+  color: #6b7280;
+}
+
+.stats-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 22px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.stats-card h3 {
+  color: #022b66;
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stat:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,99 @@
+.page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  color: #022b66;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.header p {
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-row span {
+  color: #6b7280;
+}
+
+.info-row strong {
+  color: #022b66;
+}
+
+.input-group {
+  margin-top: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.km-input {
+  position: relative;
+}
+
+.km-input i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.km-input input {
+  width: 100%;
+  padding: 16px 16px 16px 45px;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  font-size: 1rem;
+}
+
+.km-input input:focus {
+  outline: none;
+  border-color: #5bc236;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 30px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #5bc236;
+  color: white;
+
+  padding: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.btn-primary i {
+  margin-right: 10px;
+}

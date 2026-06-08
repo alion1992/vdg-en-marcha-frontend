@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../servicios/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,40 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Login {
 
-  constructor(private router: Router) {}
+dni = '';
+password = '';
 
-  login() {
-    // Aquí más adelante validarás contra Spring Boot
-    this.router.navigate(['/dashboard']);
-  }
+constructor(
+  private router: Router,
+  private authService: AuthService
+) {}
+
+login() {
+
+  this.authService.login({
+
+    dni: this.dni,
+    password: this.password
+
+  }).subscribe({
+
+    next: usuario => {
+
+      localStorage.setItem(
+        'usuario',
+        JSON.stringify(usuario)
+      );
+
+      this.router.navigate(['/dashboard']);
+    },
+
+    error: () => {
+
+      alert('Credenciales incorrectas');
+
+    }
+
+  });
+
+}
 }

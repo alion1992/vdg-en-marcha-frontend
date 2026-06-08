@@ -19,12 +19,7 @@
 
       <label>DNI</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-id-card"></i>
-        <input
-          type="text"
-          placeholder="12345678A">
-      </div>
+      <div class="input-container"> <i class="fa-solid fa-id-card"></i> <input type="text" placeholder="12345678A" [(ngModel)]="dni"> </div>
 
     </div>
 
@@ -32,12 +27,7 @@
 
       <label>Nombre</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-user"></i>
-        <input
-          type="text"
-          placeholder="Nombre">
-      </div>
+      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Nombre" [(ngModel)]="nombre"> </div>
 
     </div>
 
@@ -45,12 +35,7 @@
 
       <label>Apellidos</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-user"></i>
-        <input
-          type="text"
-          placeholder="Apellidos">
-      </div>
+      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Apellidos" [(ngModel)]="apellidos"> </div>
 
     </div>
 
@@ -58,12 +43,7 @@
 
       <label>Email</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-envelope"></i>
-        <input
-          type="email"
-          placeholder="correo@ejemplo.com">
-      </div>
+      <div class="input-container"> <i class="fa-solid fa-envelope"></i> <input type="email" placeholder="correo@ejemplo.com" [(ngModel)]="email"> </div>
 
     </div>
 
@@ -74,7 +54,7 @@
       <div class="input-container">
         <i class="fa-solid fa-graduation-cap"></i>
 
-        <select>
+        <select [(ngModel)]="curso">
           <option>Selecciona un curso</option>
           <option>1º DAW</option>
           <option>2º DAW</option>
@@ -104,11 +84,7 @@
 
       <label>Confirmar contraseña</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-lock"></i>
-        <input
-          type="password">
-      </div>
+      <div class="input-container"> <i class="fa-solid fa-lock"></i> <input type="password" [(ngModel)]="password"> </div>
 
     </div>
 

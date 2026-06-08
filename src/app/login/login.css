@@ -205,6 +205,23 @@
 .login-button:hover {
   background: #4dad2f;
 }
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.register-link a {
+  color: #022b66;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 480px) {
 

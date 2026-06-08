@@ -29,5 +29,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./finalizar-estacionamiento/finalizar-estacionamiento')
         .then(m => m.FinalizarEstacionamiento)
-  }
+  },
+
+  {
+  path: 'registro',
+  loadComponent: () =>
+    import('./registro/registro')
+      .then(m => m.Registro)
+}
 ];

@@ -36,5 +36,11 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./registro/registro')
       .then(m => m.Registro)
+    },
+    {
+  path: 'historial',
+  loadComponent: () =>
+    import('./historial/historial')
+      .then(m => m.Historial)
 }
 ];

@@ -1,0 +1,60 @@
+<div class="historial-page">
+
+  <header class="page-header">
+
+    <button
+      class="back-button"
+      (click)="volver()">
+
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <h1>Historial</h1>
+
+  </header>
+
+  <div class="summary-card">
+
+    <div class="summary-item">
+      <span>Km acumulados</span>
+      <strong>13.5 km</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Trayectos</span>
+      <strong>3</strong>
+    </div>
+
+  </div>
+
+  <div
+    class="record-card"
+    *ngFor="let registro of registros">
+
+    <div class="record-header">
+
+      <h3>{{ registro.fecha }}</h3>
+
+      <span class="km">
+        {{ registro.kilometros }} km
+      </span>
+
+    </div>
+
+    <div class="record-info">
+
+      <div>
+        <label>Entrada</label>
+        <strong>{{ registro.entrada }}</strong>
+      </div>
+
+      <div>
+        <label>Salida</label>
+        <strong>{{ registro.salida }}</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -5,18 +5,18 @@
 }
 
 .dashboard-header {
+
   background: #022b66;
-  color: white;
 
   border-radius: 24px;
 
-  padding: 20px;
+  padding: 18px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 15px;
 
-  margin-bottom: 25px;
+  color: white;
 }
 
 .dashboard-header h1 {

@@ -75,22 +75,19 @@
       <div class="input-container">
         <i class="fa-solid fa-lock"></i>
         <input
-          type="password">
+        type="password"
+        [(ngModel)]="password">
       </div>
 
     </div>
 
-    <div class="input-group">
+    
 
-      <label>Confirmar contraseña</label>
-
-      <div class="input-container"> <i class="fa-solid fa-lock"></i> <input type="password" [(ngModel)]="password"> </div>
-
-    </div>
-
-    <button class="register-button">
-      Crear cuenta
-    </button>
+<button
+  class="register-button"
+  (click)="registrar()">
+  Crear cuenta
+</button>
 
   </div>
 

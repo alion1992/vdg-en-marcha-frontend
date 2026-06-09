@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../servicios/auth-service';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-registro',
@@ -19,7 +20,9 @@ export class Registro {
   curso = '';
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService, private router:Router,
+    private messageService: MessageService
+    
   ) {}
 
   registrar() {
@@ -37,7 +40,13 @@ export class Registro {
 
       next: () => {
 
-        alert('Usuario registrado');
+        this.messageService.add({
+        severity: 'success',
+        summary: 'Registro completado',
+        detail: 'Usuario registrado correctamente',
+        life: 3000
+      });
+        this.router.navigate(['/login']);
 
       },
 
@@ -45,7 +54,12 @@ export class Registro {
 
         console.error(err);
 
-        alert('Error al registrar');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'No se ha podido registrar el usuario',
+          life: 3000
+        });
 
       }
 

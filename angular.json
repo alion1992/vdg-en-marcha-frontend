@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "AnillosDePoder": {
+    "VdgEnMarcha": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AnillosDePoder:build:production"
+              "buildTarget": "VdgEnMarcha:build:production"
             },
             "development": {
-              "buildTarget": "AnillosDePoder:build:development"
+              "buildTarget": "VdgEnMarcha:build:development"
             }
           },
           "defaultConfiguration": "development"

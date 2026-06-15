@@ -21,6 +21,24 @@
       <strong>{{ fechaActual | date:'HH:mm' }}</strong>
     </div>
 
+    <div class="door-section">
+
+  <button
+    class="btn-door"
+    (click)="abrirPuerta()">
+
+    <i class="fa-solid fa-qrcode"></i>
+
+    Abrir puerta
+
+  </button>
+
+  <small *ngIf="puertaAbierta">
+    ✅ QR validado correctamente
+  </small>
+
+</div>
+
     <div class="input-group">
       <label>Kilómetros recorridos</label>
 

@@ -28,26 +28,5 @@ export class IniciarEstacionamiento {
     this.router.navigate(['/dashboard']);
   }
 
-  abrirPuerta() {
-
-    this.shellyService
-      .abrirPuerta()
-      .subscribe({
-
-        next: () => {
-
-          this.puertaAbierta = true;
-
-          console.log('Puerta abierta');
-
-        },
-
-        error: err => {
-
-          console.error(err);
-
-        }
-
-      });
-  }
+  
 }

@@ -51,7 +51,7 @@ export class Login {
         this.messageService.add({
   severity: 'error',
   summary: 'Credenciales incorrectas',
-  detail: 'Revisa el DNI y la contraseña',
+  detail: error.error.message,
   life: 3000
 });
       }

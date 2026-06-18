@@ -1,7 +1,7 @@
 <div class="register-page">
 
   <header class="register-header">
-
+   
     <img
       src="assets/img/logoTipo2.png"
       alt="logo"
@@ -13,13 +13,17 @@
 
   </header>
 
-  <div class="register-card">
+  <form
+  class="register-card"
+  #registroForm="ngForm"
+  (ngSubmit)="registrar(registroForm)">
 
     <div class="input-group">
 
       <label>DNI</label>
 
-      <div class="input-container"> <i class="fa-solid fa-id-card"></i> <input type="text" placeholder="12345678A" [(ngModel)]="dni"> </div>
+    <div class="input-container"> <i class="fa-solid fa-id-card"></i> <input type="text" placeholder="00000000X"
+            [(ngModel)]="dni" required name="dni">  </div>
 
     </div>
 
@@ -27,7 +31,7 @@
 
       <label>Nombre</label>
 
-      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Nombre" [(ngModel)]="nombre"> </div>
+      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Nombre" [(ngModel)]="nombre" required name="nombre"> </div>
 
     </div>
 
@@ -35,7 +39,7 @@
 
       <label>Apellidos</label>
 
-      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Apellidos" [(ngModel)]="apellidos"> </div>
+      <div class="input-container"> <i class="fa-solid fa-user"></i> <input type="text" placeholder="Apellidos" [(ngModel)]="apellidos" required name="apellidos"> </div>
 
     </div>
 
@@ -43,30 +47,11 @@
 
       <label>Email</label>
 
-      <div class="input-container"> <i class="fa-solid fa-envelope"></i> <input type="email" placeholder="correo@ejemplo.com" [(ngModel)]="email"> </div>
+      <div class="input-container"> <i class="fa-solid fa-envelope"></i> <input type="email" placeholder="correo@ejemplo.com" [(ngModel)]="email" required name="email"> </div>
 
     </div>
 
-    <div class="input-group">
 
-      <label>Curso</label>
-
-      <div class="input-container">
-        <i class="fa-solid fa-graduation-cap"></i>
-
-        <select [(ngModel)]="curso">
-          <option>Selecciona un curso</option>
-          <option>1º DAW</option>
-          <option>2º DAW</option>
-          <option>1º DAM</option>
-          <option>2º DAM</option>
-          <option>1º ASIR</option>
-          <option>2º ASIR</option>
-        </select>
-
-      </div>
-
-    </div>
 
     <div class="input-group">
 
@@ -76,19 +61,19 @@
         <i class="fa-solid fa-lock"></i>
         <input
         type="password"
-        [(ngModel)]="password">
+        [(ngModel)]="password" required name="password">
       </div>
 
     </div>
 
     
-
 <button
-  class="register-button"
-  (click)="registrar()">
-  Crear cuenta
-</button>
+    class="register-button"
+    (click)="registrar(registroForm)"
+    type="button">
+    Crear cuenta
+  </button>
 
-  </div>
+  </form>
 
 </div>

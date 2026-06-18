@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../servicios/auth-service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { NgForm } from '@angular/forms';
+import { ValidacionesUtils } from '../utls/validaciones.utils';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +19,7 @@ export class Registro {
   apellidos = '';
   email = '';
   password = '';
-  curso = '';
+  
 
   constructor(
     private authService: AuthService, private router:Router,
@@ -25,16 +27,42 @@ export class Registro {
     
   ) {}
 
-  registrar() {
+  registrar(form: NgForm) {
+    console.log('ee')
+    
+    if (form.invalid) {
 
+    this.messageService.add({
+      severity: 'warn',
+      summary: 'Formulario incompleto',
+      detail: 'Debes rellenar todos los campos obligatorios',
+      life: 3000
+    });
+
+    return;
+    }
+    const errorDni =
+  ValidacionesUtils.validarDni(this.dni);
+
+  if (errorDni) {
+
+  this.messageService.add({
+    severity: 'warn',
+    summary: 'DNI incorrecto',
+    detail: errorDni,
+    life: 3000
+  });
+
+  return;
+  }
     this.authService.register({
 
       dni: this.dni,
       nombre: this.nombre,
       apellidos: this.apellidos,
       email: this.email,
-      password: this.password,
-      curso: this.curso
+      password: this.password
+      
 
     }).subscribe({
 
@@ -57,7 +85,7 @@ export class Registro {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'No se ha podido registrar el usuario',
+          detail: err.error.message,
           life: 3000
         });
 
@@ -65,5 +93,9 @@ export class Registro {
 
     });
 
+  }
+
+  volver() {
+    this.router.navigate(['/dashboard']);
   }
 }

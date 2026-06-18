@@ -129,3 +129,30 @@
 
   font-weight: 600;
 }
+.back-icon {
+
+  width: 56px;
+  height: 56px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+
+  margin-bottom: 30px;
+}
+
+.back-icon i {
+
+  font-size: 1.5rem;
+
+  color: #111827;
+}

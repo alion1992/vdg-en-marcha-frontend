@@ -1,84 +1,81 @@
 <div class="dashboard">
 
-<header class="dashboard-header">
+  <header class="dashboard-header">
 
-  <div class="header-left">
+    <div class="header-left">
 
-    <img
-      src="assets/img/logoTipoI.png"
-      alt="logo"
-      class="logo">
+      <img
+        src="assets/img/logoTipoI.png"
+        alt="logo"
+        class="logo">
 
-    <div>
-      <h1>VdG-En Marcha</h1>
-      <p>Hola Francisco 👋</p>
+      <div>
+        <h1>VdG-En Marcha</h1>
+        <p>Hola Francisco 👋</p>
+      </div>
+
+    </div>
+
+    <div class="header-actions">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+  </header>
+
+  <div class="dashboard-grid">
+
+    <!-- ABRIR PUERTA -->
+    <div
+      class="dashboard-tile"
+      (click)="abrirPuerta()">
+
+      <i class="fa-solid fa-lock-open"></i>
+
+      <h3>Abrir puerta</h3>
+
+      <p>Acceso al aparcamiento</p>
+
+    </div>
+
+    <!-- ENTRADA / SALIDA -->
+    <div
+      class="dashboard-tile"
+      routerLink="/entrada">
+
+      <i class="fa-solid fa-bicycle"></i>
+
+      <h3>Entrada / Salida</h3>
+
+      <p>Registrar trayecto</p>
+
+    </div>
+
+    <!-- HISTORIAL -->
+    <div
+      class="dashboard-tile"
+      routerLink="/historial">
+
+      <i class="fa-solid fa-clock-rotate-left"></i>
+
+      <h3>Historial rutas</h3>
+
+      <p>Consultar registros</p>
+
+    </div>
+
+    <!-- PERFIL -->
+    <div
+      class="dashboard-tile"
+      routerLink="/perfil">
+
+      <i class="fa-solid fa-user-pen"></i>
+
+      <h3>Modificar datos</h3>
+
+      <p>Editar perfil</p>
+
     </div>
 
   </div>
-
-  <div class="header-actions">
-
-    <i class="fa-solid fa-user"></i>
-
-  </div>
-
-</header>
-
-  <div class="action-card arrival"
-       routerLink="/entrada">
-
-    <div class="icon">
-      <i class="fa-solid fa-scooter"></i>
-    </div>
-
-    <div>
-      <h2>Registrar llegada</h2>
-      <p>Introduce los kilómetros recorridos</p>
-    </div>
-
-  </div>
-
-  <div class="action-card departure"
-       routerLink="/salida">
-
-    <div class="icon">
-      <i class="fa-solid fa-door-open"></i>
-    </div>
-
-    <div>
-      <h2>Registrar salida</h2>
-      <p>Finaliza tu estacionamiento</p>
-    </div>
-
-  </div>
-
-  <div class="stats-card">
-
-    <h3>
-      <i class="fa-solid fa-chart-line"></i>
-      Resumen
-    </h3>
-
-    <div class="stat">
-      <span>Kilómetros acumulados</span>
-      <strong>125 km</strong>
-    </div>
-
-    <div class="stat">
-      <span>Trayectos</span>
-      <strong>18</strong>
-    </div>
-
-  </div>
-  <div class="action-card" routerLink="/historial">
-  <div class="icon">
-    <i class="fa-solid fa-clock-rotate-left"></i>
-  </div>
-
-  <div>
-    <h2>Historial</h2>
-    <p>Consultar registros anteriores</p>
-  </div>
-</div>
 
 </div>

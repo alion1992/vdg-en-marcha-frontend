@@ -1,28 +1,37 @@
 .dashboard {
+
   min-height: 100vh;
+
   background: #f5f7fb;
+
   padding: 20px;
 }
 
 .dashboard-header {
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
   background: #0a3278;
+
   color: white;
 
   padding: 20px;
 
   border-radius: 20px;
+
   margin-bottom: 20px;
 }
 
 .header-left {
 
   display: flex;
+
   align-items: center;
+
   gap: 15px;
 }
 
@@ -32,42 +41,67 @@
   height: 70px;
 
   border-radius: 50%;
+
   background: white;
 
   object-fit: cover;
+
   padding: 5px;
 }
 
 .dashboard-header h1 {
 
   margin: 0;
+
   font-size: 1.8rem;
 }
 
 .dashboard-header p {
 
   margin: 5px 0 0;
+
   opacity: .9;
 }
 
 .header-actions {
 
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+
   cursor: pointer;
 }
 
-.action-card {
+/* =========================
+   GRID
+========================= */
+
+.dashboard-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.dashboard-tile {
+
   background: white;
 
   border-radius: 24px;
 
-  padding: 22px;
+  min-height: 180px;
 
-  margin-bottom: 18px;
+  padding: 20px;
 
   display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
   align-items: center;
-  gap: 18px;
+
+  text-align: center;
 
   cursor: pointer;
 
@@ -76,72 +110,42 @@
   transition: .2s;
 }
 
-.action-card:hover {
+.dashboard-tile:hover {
+
   transform: translateY(-3px);
 }
 
-.icon {
-  width: 60px;
-  height: 60px;
+.dashboard-tile i {
 
-  border-radius: 18px;
+  font-size: 2.8rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 1.8rem;
-}
-
-.arrival .icon {
-  background: rgba(91,194,54,.15);
-  color: #5bc236;
-}
-
-.departure .icon {
-  background: rgba(2,43,102,.15);
   color: #022b66;
+
+  margin-bottom: 15px;
 }
 
-.action-card h2 {
-  margin-bottom: 5px;
+.dashboard-tile h3 {
+
+  margin: 0;
+
   color: #111827;
+
+  font-size: 1.2rem;
 }
 
-.action-card p {
+.dashboard-tile p {
+
+  margin-top: 10px;
+
   color: #6b7280;
-}
 
-.stats-card {
-  background: white;
-
-  border-radius: 24px;
-
-  padding: 22px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
-}
-
-.stats-card h3 {
-  color: #022b66;
-  margin-bottom: 20px;
-}
-
-.stat {
-  display: flex;
-  justify-content: space-between;
-
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.stat:last-child {
-  border-bottom: none;
+  font-size: .95rem;
 }
 
 /* =========================
    MOVIL
 ========================= */
+
 @media (max-width: 768px) {
 
   .dashboard {
@@ -152,6 +156,7 @@
   .dashboard-header {
 
     padding: 12px 16px;
+
     border-radius: 0;
 
     margin:
@@ -182,24 +187,31 @@
     font-size: 1.2rem;
   }
 
-  .action-card {
+  .dashboard-grid {
 
-    padding: 18px;
+    gap: 12px;
   }
 
-  .action-card h2 {
+  .dashboard-tile {
 
-    font-size: 1rem;
+    min-height: 140px;
+
+    padding: 15px;
   }
 
-  .action-card p {
+  .dashboard-tile i {
 
-    font-size: .85rem;
+    font-size: 2rem;
   }
 
-  .stats-card {
+  .dashboard-tile h3 {
 
-    padding: 18px;
+    font-size: .95rem;
+  }
+
+  .dashboard-tile p {
+
+    font-size: .8rem;
   }
 
 }

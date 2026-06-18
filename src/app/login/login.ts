@@ -37,6 +37,11 @@ export class Login {
       next: (usuario: any) => {
 
         localStorage.setItem(
+          'token',
+          usuario.token
+        );
+
+        localStorage.setItem(
           'usuario',
           JSON.stringify(usuario)
         );

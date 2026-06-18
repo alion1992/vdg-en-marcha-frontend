@@ -2,6 +2,9 @@
 
   min-height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+
   background: #f5f7fb;
 
   padding: 20px;
@@ -214,4 +217,41 @@
     font-size: .8rem;
   }
 
+  
+
+}
+.dashboard-footer {
+
+  margin-top: auto;
+
+  padding: 20px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.footer-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+.footer-item:last-child {
+
+  margin-bottom: 0;
+}
+
+.footer-item i {
+
+  color: #0a3278;
+
+  width: 20px;
 }

@@ -53,12 +53,12 @@ export class Dashboard {
 
   }
 
-  cerrarSesion() {
+   cerrarSesion() {
 
+    localStorage.removeItem('token');
     localStorage.removeItem('usuario');
 
     this.router.navigate(['/login']);
-
   }
 
 }

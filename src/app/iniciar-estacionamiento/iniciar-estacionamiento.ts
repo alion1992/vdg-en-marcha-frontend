@@ -1,12 +1,13 @@
 import {
   Component,
   OnInit,
-  OnDestroy
+  OnDestroy, ChangeDetectorRef
 } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 import { RegistroService } from '../servicios/registro-service';
 
@@ -37,7 +38,9 @@ export class IniciarEstacionamiento
 
   constructor(
     private router: Router,
-    private registroService: RegistroService
+    private registroService: RegistroService, 
+    private cdr: ChangeDetectorRef,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -69,8 +72,10 @@ export class IniciarEstacionamiento
         next: (response: any) => {
 
           if (response.activo) {
-
+            console.log(response.activo)
+            
             this.registroActivo = true;
+            this.cdr.detectChanges();
 
             this.fechaEntrada =
               new Date(
@@ -125,6 +130,22 @@ export class IniciarEstacionamiento
 
           clearInterval(this.timer);
 
+          this.messageService.add({
+
+          severity: 'success',
+
+          summary: 'Salida registrada',
+
+          detail: 'Hasta pronto 🚲',
+
+          life: 3000
+
+        });
+
+        this.router.navigate([
+          '/dashboard'
+        ]);
+
         }
 
       });
@@ -164,6 +185,8 @@ export class IniciarEstacionamiento
         `${horas.toString().padStart(2, '0')}:`
         + `${minutos.toString().padStart(2, '0')}:`
         + `${segundos.toString().padStart(2, '0')}`;
+
+        this.cdr.detectChanges();
 
     }, 1000);
 

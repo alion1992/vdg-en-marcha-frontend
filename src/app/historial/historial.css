@@ -1,119 +1,182 @@
 .historial-page {
+
   min-height: 100vh;
+
   background: #f5f7fb;
+
   padding: 20px;
 }
 
 .page-header {
 
   display: flex;
+
   align-items: center;
 
-  gap: 15px;
+  gap: 20px;
 
-  margin-bottom: 25px;
-}
-
-.page-header h1 {
-  color: #022b66;
+  margin-bottom: 30px;
 }
 
 .back-button {
 
+  width: 56px;
+  height: 56px;
+
   border: none;
+
   background: white;
 
-  width: 40px;
-  height: 40px;
+  border-radius: 18px;
 
-  border-radius: 12px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
 
-  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
 }
 
-.summary-card {
+.back-button i {
+
+  font-size: 1.5rem;
+
+  color: #111827;
+}
+
+.page-header h1 {
+
+  margin: 0;
+
+  color: #022b66;
+
+  font-size: 3rem;
+
+  font-weight: 800;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.trip-card {
 
   background: white;
 
   border-radius: 24px;
 
-  padding: 20px;
-
-  display: flex;
-  justify-content: space-around;
+  padding: 25px;
 
   margin-bottom: 20px;
 
   box-shadow: 0 5px 20px rgba(0,0,0,.06);
 }
 
-.summary-item {
-  text-align: center;
-}
-
-.summary-item span {
-  color: #6b7280;
-  display: block;
-}
-
-.summary-item strong {
-  color: #022b66;
-  font-size: 1.3rem;
-}
-
-.record-card {
-
-  background: white;
-
-  border-radius: 24px;
-
-  padding: 20px;
-
-  margin-bottom: 15px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
-}
-
-.record-header {
+.trip-header {
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-.record-header h3 {
+.trip-header h3 {
+
+  margin: 0;
+
   color: #022b66;
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
 }
 
-.km {
+.km-badge {
 
   background: rgba(91,194,54,.15);
 
   color: #5bc236;
 
-  padding: 6px 12px;
+  padding: 10px 20px;
 
   border-radius: 999px;
+
+  font-size: 1.3rem;
 
   font-weight: 700;
 }
 
-.record-info {
+.trip-times {
 
   display: flex;
+
   justify-content: space-between;
 }
 
-.record-info label {
+.trip-times span {
+
   display: block;
+
   color: #6b7280;
-  font-size: .9rem;
+
+  margin-bottom: 5px;
 }
 
-.record-info strong {
+.trip-times strong {
+
   color: #111827;
+
+  font-size: 1.5rem;
+}
+
+/* =========================
+   MOVIL
+========================= */
+
+@media (max-width: 768px) {
+
+  .historial-page {
+
+    padding: 16px;
+  }
+
+  .page-header {
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+  }
+
+  .page-header h1 {
+
+    font-size: 2.5rem;
+  }
+
+  .trip-card {
+
+    padding: 20px;
+  }
+
+  .trip-header h3 {
+
+    font-size: 1.4rem;
+  }
+
+  .km-badge {
+
+    font-size: 1rem;
+
+    padding: 8px 14px;
+  }
+
+  .trip-times strong {
+
+    font-size: 1.2rem;
+  }
+
 }

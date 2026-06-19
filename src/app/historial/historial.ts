@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit ,ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+
+import { RegistroService } from '../servicios/registro-service';
 
 @Component({
   selector: 'app-historial',
@@ -8,32 +10,53 @@ import { Router } from '@angular/router';
   templateUrl: './historial.html',
   styleUrl: './historial.css'
 })
-export class Historial {
+export class Historial implements OnInit {
 
-  constructor(private router: Router) {}
+  registros: any[] = [];
 
-  registros = [
-    {
-      fecha: '05/06/2026',
-      entrada: '08:15',
-      salida: '14:25',
-      kilometros: 4.5
-    },
-    {
-      fecha: '04/06/2026',
-      entrada: '08:08',
-      salida: '14:20',
-      kilometros: 5.1
-    },
-    {
-      fecha: '03/06/2026',
-      entrada: '08:21',
-      salida: '14:30',
-      kilometros: 3.9
-    }
-  ];
+  kmTotales = 0;
+
+  trayectos = 0;
+
+  constructor(
+    private router: Router,
+    private registroService: RegistroService,
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  ngOnInit() {
+
+    this.registroService
+      .obtenerHistorial()
+      .subscribe({
+
+        next: (data: any[]) => {
+
+          this.registros = data;
+
+          this.trayectos =
+            data.length;
+
+          this.kmTotales =
+            data.reduce(
+              (suma, r) =>
+                suma + (r.kilometros || 0),
+              0
+            );
+            this.cdr.detectChanges();
+
+        }
+
+      });
+
+  }
 
   volver() {
-    this.router.navigate(['/dashboard']);
+
+    this.router.navigate([
+      '/dashboard'
+    ]);
+
   }
+
 }

@@ -197,3 +197,37 @@
 
   background: #dc2626;
 }
+
+.btn-camera {
+
+  width: 100%;
+
+  margin-top: 20px;
+  margin-bottom: 15px;
+
+  border: 2px solid #0a3278;
+
+  background: white;
+  color: #0a3278;
+
+  padding: 16px;
+
+  border-radius: 18px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.btn-camera:hover {
+
+  background: #f0f4ff;
+}
+
+.btn-camera i {
+
+  margin-right: 10px;
+}

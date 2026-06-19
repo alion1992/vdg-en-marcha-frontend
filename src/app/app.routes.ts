@@ -54,6 +54,12 @@ export const routes: Routes = [
       import('./historial/historial')
         .then(m => m.Historial)
   },
+  {
+  path: 'mapa',
+  loadComponent: () =>
+    import('./mapa/mapa')
+      .then(m => m.Mapa)
+  },
 
   {
     path: '**',

@@ -156,3 +156,44 @@
 
   color: #111827;
 }
+.active-card {
+
+  text-align: center;
+}
+
+.parking-icon {
+
+  font-size: 4rem;
+
+  color: #0a3278;
+
+  margin-bottom: 20px;
+}
+
+.time-label {
+
+  margin-top: 15px;
+
+  color: #6b7280;
+}
+
+.counter {
+
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  color: #0a3278;
+
+  margin: 20px 0;
+}
+
+.btn-danger {
+
+  background: #ef4444;
+}
+
+.btn-danger:hover {
+
+  background: #dc2626;
+}

@@ -8,51 +8,100 @@
 
   </div>
 
-  <header class="header">
-    <h1>Registrar llegada</h1>
-    <p>Introduce los kilómetros recorridos</p>
-  </header>
+  <div *ngIf="!registroActivo">
 
-  <div class="card">
+    <header class="header">
 
-    <div class="info-row">
-      <span>Fecha</span>
-      <strong>{{ fechaActual | date:'dd/MM/yyyy' }}</strong>
-    </div>
+      <h1>Registrar llegada</h1>
 
-    <div class="info-row">
-      <span>Hora de llegada</span>
-      <strong>{{ fechaActual | date:'HH:mm' }}</strong>
-    </div>
+      <p>
+        Introduce los kilómetros recorridos
+      </p>
 
-    <div class="door-section">
+    </header>
 
-     
+    <div class="card">
 
-      <small *ngIf="puertaAbierta">
-        Puerta abierta
-      </small>
+      <div class="info-row">
 
-    </div>
+        <span>Fecha</span>
 
-    <div class="input-group">
-      <label>Kilómetros recorridos</label>
+        <strong>
+          {{ fechaActual | date:'dd/MM/yyyy' }}
+        </strong>
 
-      <div class="km-input">
-        <i class="fa-solid fa-road"></i>
-
-        <input
-          type="number"
-          min="0"
-          step="0.1"
-          placeholder="Ej: 4.5"
-          [(ngModel)]="kilometros">
       </div>
+
+      <div class="info-row">
+
+        <span>Hora</span>
+
+        <strong>
+          {{ fechaActual | date:'HH:mm' }}
+        </strong>
+
+      </div>
+
+      <div class="input-group">
+
+        <label>
+          Kilómetros recorridos
+        </label>
+
+        <div class="km-input">
+
+          <i class="fa-solid fa-road"></i>
+
+          <input
+            type="number"
+            min="0"
+            step="0.1"
+            [(ngModel)]="kilometros">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn-primary"
+        (click)="registrarEntrada()">
+
+        <i class="fa-solid fa-person-walking-arrow-right"></i>
+
+        Registrar llegada
+
+      </button>
+
     </div>
 
-    <button class="btn-primary">
-      <i class="fa-solid fa-person-walking-arrow-right"></i>
-      Registrar llegada
+  </div>
+
+  <div
+    *ngIf="registroActivo"
+    class="card active-card">
+
+    <i class="fa-solid fa-square-parking parking-icon"></i>
+
+    <h2>Vehículo estacionado</h2>
+
+    <p class="time-label">
+      Tiempo transcurrido
+    </p>
+
+    <div class="counter">
+
+      {{ contador }}
+
+    </div>
+
+    <button
+      class="btn-primary btn-danger"
+      (click)="registrarSalida()">
+
+      <i class="fa-solid fa-door-open"></i>
+
+      Registrar salida
+
     </button>
 
   </div>

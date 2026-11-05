@@ -4,7 +4,7 @@ import { AuthService } from '../servicios/auth-service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { NgForm } from '@angular/forms';
-import { ValidacionesUtils } from '../utls/validaciones.utils';
+
 
 @Component({
   selector: 'app-registro',
@@ -14,11 +14,12 @@ import { ValidacionesUtils } from '../utls/validaciones.utils';
 })
 export class Registro {
 
-  dni = '';
+  usuario = '';
   nombre = '';
   apellidos = '';
   email = '';
   password = '';
+  mostrarPassword = false;
   
 
   constructor(
@@ -42,22 +43,12 @@ export class Registro {
     return;
     }
     const errorDni =
-  ValidacionesUtils.validarDni(this.dni);
+  
 
-  if (errorDni) {
-
-  this.messageService.add({
-    severity: 'warn',
-    summary: 'DNI incorrecto',
-    detail: errorDni,
-    life: 3000
-  });
-
-  return;
-  }
+  
     this.authService.register({
 
-      dni: this.dni,
+      usuario: this.usuario,
       nombre: this.nombre,
       apellidos: this.apellidos,
       email: this.email,

@@ -3,20 +3,23 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../servicios/auth-service';
 import { MessageService } from 'primeng/api';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   imports: [
     FormsModule,
-    RouterLink
+    RouterLink,
+    NgClass
   ],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
 export class Login {
 
-  dni = '';
+  usuario = '';
   password = '';
+  mostrarPassword = false;
 
   constructor(
     private router: Router,
@@ -29,7 +32,7 @@ export class Login {
     this.authService.login({
       
   
-      dni: this.dni,
+      usuario: this.usuario,
       password: this.password
       
     }).subscribe({

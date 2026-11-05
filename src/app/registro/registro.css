@@ -134,6 +134,30 @@
   text-decoration: underline;
 }
 
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  padding-right: 55px;
+}
+
+.input-container .password-toggle {
+  position: absolute;
+  right: 20px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.input-container .password-toggle:hover {
+  color: #0a3278;
+}
+
 /* =========================
    MOVIL
 ========================= */

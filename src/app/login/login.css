@@ -223,6 +223,26 @@
   text-decoration: underline;
 }
 
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding-right: 55px;
+}
+
+.input-container .fa-eye,
+.input-container .fa-eye-slash {
+  position: absolute;
+  right: 20px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  z-index: 2;
+}
+
 @media (max-width: 480px) {
 
   /* CABECERA */

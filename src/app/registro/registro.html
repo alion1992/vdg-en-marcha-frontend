@@ -20,10 +20,10 @@
 
     <div class="input-group">
 
-      <label>DNI</label>
+      <label>Usuario</label>
 
-    <div class="input-container"> <i class="fa-solid fa-id-card"></i> <input type="text" placeholder="00000000X"
-            [(ngModel)]="dni" required name="dni">  </div>
+    <div class="input-container"> <i class="fa-solid fa-id-card"></i> <input type="text" placeholder=""
+            [(ngModel)]="usuario" required name="usuario">  </div>
 
     </div>
 
@@ -53,18 +53,32 @@
 
 
 
-    <div class="input-group">
+ <div class="input-group">
 
-      <label>Contraseña</label>
+  <label>Contraseña</label>
 
-      <div class="input-container">
-        <i class="fa-solid fa-lock"></i>
-        <input
-        type="password"
-        [(ngModel)]="password" required name="password">
-      </div>
+  <div class="input-container">
 
-    </div>
+    <i class="fa-solid fa-lock"></i>
+
+    <input
+      [type]="mostrarPassword ? 'text' : 'password'"
+      [(ngModel)]="password"
+      required
+      name="password"
+      placeholder="Contraseña">
+
+      <i
+      [class.fa-eye]="!mostrarPassword"
+      [class.fa-eye-slash]="mostrarPassword"
+      [class.fa-solid]="true"
+      class="password-toggle"
+      (click)="mostrarPassword = !mostrarPassword">
+    </i>
+
+  </div>
+
+</div>
 
     
 <button
